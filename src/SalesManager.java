@@ -15,4 +15,11 @@ public class SalesManager {
         }
         return max;
     }
+    public int stat(){
+        int nums = 0;
+        for (long m : sales) {
+            nums += m;
+        }
+        return nums/ sales.length;
+    }
 }
