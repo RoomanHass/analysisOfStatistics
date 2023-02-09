@@ -15,11 +15,23 @@ public class SalesManager {
         }
         return max;
     }
-    public int stat(){
-        int nums = 0;
-        for (long m : sales) {
-            nums += m;
+
+    public long min() {
+        long min = sales[0];
+        for (long sal : sales) {
+            if (sal < min) {
+                min = sal;
+            }
         }
-        return nums/ sales.length;
+        return min;
+    }
+
+    public long stat() {
+        long nums = 0;
+        for (int i = 0; i < sales.length; i++) {
+            nums += sales[i];
+        }
+        nums = (nums - max() - min()) / (sales.length - 2);
+        return nums;
     }
 }
